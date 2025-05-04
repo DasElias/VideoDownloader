@@ -1,0 +1,8 @@
+*.webm
+venv
+*.exe
+*.mp3
+*.mp4
+*.mkv
+*.avi
+*.mov
