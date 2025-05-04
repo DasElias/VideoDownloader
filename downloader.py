@@ -74,7 +74,7 @@ root.rowconfigure(3, weight=1)
 root.columnconfigure(0, weight=1)
 
 # Multi-line text field for URLs
-text = tk.Text(root, width=60, height=10, bg='white')
+text = tk.Text(root, width=60, height=10, bg='white', fg='black')
 text.grid(row=0, column=0, padx=10, pady=(10,5), sticky='nsew')
 
 # On launch, check clipboard and insert if it's a YouTube URL
@@ -93,7 +93,7 @@ button_download.grid(row=1, column=0, pady=(0,5))
 # Status output
 label_status = tk.Label(root, text="Status:")
 label_status.grid(row=2, column=0, sticky='w', padx=10)
-status = tk.Text(root, width=60, height=10, bg='white', state=tk.DISABLED)
+status = tk.Text(root, width=60, height=10, bg='white', fg='black', state=tk.DISABLED)
 status.grid(row=3, column=0, padx=10, pady=(0,10), sticky='nsew')
 
 # Start GUI event loop
