@@ -42,17 +42,17 @@ def download_videos():
         append_status(f"Downloading: {url}")
         try:
             result = subprocess.run(
-                ['yt-dlp', '--no-mtime', '--embed-metadata', '--embed-thubmnail', '--extract-audio', '--audio-format', 'mp3', url],
+                ['yt-dlp', '--no-mtime', '--embed-metadata', '--embed-thumbnail', '--extract-audio', '--audio-format', 'mp3', url],
                 stdout=subprocess.PIPE,
                 stderr=subprocess.STDOUT,
                 text=True
             )
             output = result.stdout.strip()
-            append_status(f"System output for {url}:\n{output}")
             if result.returncode == 0:
                 append_status(f"Finished downloading: {url}")
             else:
                 append_status(f"Error downloading {url}, return code {result.returncode}")
+                append_status(f"System output for {url}:\n{output}")
         except Exception as e:
             append_status(f"Unexpected error: {e}")
     append_status("All done.")
