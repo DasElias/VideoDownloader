@@ -42,7 +42,7 @@ def download_videos():
         append_status(f"Downloading: {url}")
         try:
             result = subprocess.run(
-                ['yt-dlp', url],
+                ['yt-dlp', '--no-mtime', '--embed-metadata', '--embed-thubmnail', '--extract-audio', '--audio-format', 'mp3', url],
                 stdout=subprocess.PIPE,
                 stderr=subprocess.STDOUT,
                 text=True
@@ -74,7 +74,7 @@ root.rowconfigure(3, weight=1)
 root.columnconfigure(0, weight=1)
 
 # Multi-line text field for URLs
-text = tk.Text(root, width=60, height=10)
+text = tk.Text(root, width=60, height=10, bg='white')
 text.grid(row=0, column=0, padx=10, pady=(10,5), sticky='nsew')
 
 # On launch, check clipboard and insert if it's a YouTube URL
@@ -93,7 +93,7 @@ button_download.grid(row=1, column=0, pady=(0,5))
 # Status output
 label_status = tk.Label(root, text="Status:")
 label_status.grid(row=2, column=0, sticky='w', padx=10)
-status = tk.Text(root, width=60, height=10, state=tk.DISABLED)
+status = tk.Text(root, width=60, height=10, bg='white', state=tk.DISABLED)
 status.grid(row=3, column=0, padx=10, pady=(0,10), sticky='nsew')
 
 # Start GUI event loop
