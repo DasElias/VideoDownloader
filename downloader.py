@@ -42,7 +42,7 @@ def download_videos():
         append_status(f"Downloading: {url}")
         try:
             result = subprocess.run(
-                ['youtube-dl', '--no-mtime', '--embed-metadata', '--embed-thubmnail', '--extract-audio', '--audio-format', 'mp3', url],
+                ['yt-dlp', '--no-mtime', '--embed-metadata', '--embed-thubmnail', '--extract-audio', '--audio-format', 'mp3', url],
                 stdout=subprocess.PIPE,
                 stderr=subprocess.STDOUT,
                 text=True
