@@ -74,7 +74,7 @@ root.rowconfigure(3, weight=1)
 root.columnconfigure(0, weight=1)
 
 # Multi-line text field for URLs
-text = tk.Text(root, width=60, height=10, bg='white', fg='black')
+text = tk.Text(root, width=60, height=10, bg='white', fg='black', insertbackground='black')
 text.grid(row=0, column=0, padx=10, pady=(10,5), sticky='nsew')
 
 # On launch, check clipboard and insert if it's a YouTube URL
