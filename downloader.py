@@ -42,7 +42,7 @@ def download_videos():
         append_status(f"Downloading: {url}")
         try:
             result = subprocess.run(
-                ['yt-dlp', '--no-mtime', '--embed-metadata', '--embed-thumbnail', '--extract-audio', '--audio-format', 'mp3', '--audio-quality', '0', '-o', '/Users/greta/Music/Downloaded\ by\ MediaHuman/%(title)s.%(ext)s', '--fmpeg-location', '/opt/homebrew/bin/ffmpeg', url],
+                ['yt-dlp', '--no-mtime', '--embed-metadata', '--embed-thumbnail', '--extract-audio', '--audio-format', 'mp3', '--audio-quality', '0', '-o', '/Users/greta/Music/Downloaded\ by\ MediaHuman/%(title)s.%(ext)s', '--ffmpeg-location', '/opt/homebrew/bin/ffmpeg', url],
                 stdout=subprocess.PIPE,
                 stderr=subprocess.STDOUT,
                 text=True
